@@ -1,10 +1,10 @@
 import React from "react";
-import List from "./List";
+import { List } from "./List";
 
-export default function Posts({ posts }) {
+export function Posts() {
   return (
     <section>
-      <List posts={posts} />
+      <List />
     </section>
   );
 }

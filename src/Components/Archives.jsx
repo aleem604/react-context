@@ -1,16 +1,12 @@
-import { faker } from "@faker-js/faker";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { PostContext } from "../App";
+import { createRandomPost } from "../Utils/Utils";
 
-export function createRandomPost() {
-  return {
-    title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
-    body: faker.hacker.phrase(),
-  };
-}
+export default function Archive() {
+  const { onAddPost } = useContext(PostContext);
 
-export default function Archive({ onAddPost }) {
   const [posts] = useState(() =>
-    Array.from({ length: 10000 }, () => createRandomPost())
+    Array.from({ length: 100 }, () => createRandomPost())
   );
 
   const [showArchive, setShowArchive] = useState(false);

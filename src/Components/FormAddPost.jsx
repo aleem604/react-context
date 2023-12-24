@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { PostContext } from "../App";
 
-export default function FormAddPost({ onAddPost }) {
+export function FormAddPost() {
+  const { onAddPost } = useContext(PostContext);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
